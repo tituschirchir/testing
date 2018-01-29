@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import List, Card, Tree, Farmer, Picture
+from .models import Tree, Farmer, Picture
 
 
 class PictureSerializer(serializers.ModelSerializer):
@@ -21,18 +21,4 @@ class FarmerSerializer(serializers.ModelSerializer):
     picture = PictureSerializer(read_only=False, many=True)
     class Meta:
         model = Farmer
-        fields = '__all__'
-
-
-class CardSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Card
-        fields = '__all__'
-
-
-class ListSerializer(serializers.ModelSerializer):
-    cards = CardSerializer(read_only=True, many=True)
-
-    class Meta:
-        model = List
         fields = '__all__'

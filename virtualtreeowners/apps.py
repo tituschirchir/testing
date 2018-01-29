@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class VirtualtreeownersConfig(AppConfig):
+class virtualtreeownersConfig(AppConfig):
     name = 'virtualtreeowners'

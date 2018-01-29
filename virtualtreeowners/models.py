@@ -9,7 +9,7 @@ class Picture(models.Model):
     image = models.ImageField(blank=True, null=True, upload_to='')
 
     def __str__(self):
-        return "Picture:{self.name}"
+        return "Picture:{}".format(self.name)
 
 
 @python_2_unicode_compatible
@@ -20,7 +20,7 @@ class Tree(models.Model):
     picture = models.ForeignKey(Picture, related_name="tree", on_delete=models.CASCADE)
 
     def __str__(self):
-        return "Tree:{self.name}"
+        return "Tree:{}".format(self.name)
 
 
 @python_2_unicode_compatible
@@ -32,24 +32,4 @@ class Farmer(models.Model):
     picture = models.ManyToManyField(Picture, related_name="farmer_picture")
 
     def __str__(self):
-        return "Farmer:{self.first_name}"
-
-
-@python_2_unicode_compatible
-class List(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return "List:{self.name}"
-
-
-@python_2_unicode_compatible
-class Card(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    picture = models.ForeignKey(Picture, related_name="pictures", on_delete=models.CASCADE)
-    story_points = models.IntegerField(null=True, blank=True)
-    business_value = models.IntegerField(null=True, blank=True)
-
-    def __str__(self):
-        return "Card:{self.title}"
+        return "Farmer:{}".format(self.first_name)
