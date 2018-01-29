@@ -1,0 +1,13 @@
+<div id="trees" class="container-fluid text-center bg-grey">
+    <div id="awesome_slider" class="carousel slide awesome-carousel">
+        <carousel interval="myInterval">
+            <slide ng-repeat="tree in trees" active="tree.active">
+                <img class="bg-img" ng-src="{{ tree.picture.image }}">
+                <div class="carousel-caption cap-text">
+                    <h3>{{ tree.picture.name }}</h3>
+                    <p>{{ tree.picture.description }}</p>
+                </div>
+            </slide>
+        </carousel>
+    </div>
+</div>

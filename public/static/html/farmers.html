@@ -1,0 +1,47 @@
+<div>
+    <table class="table table-hover table-bordered table-responsive">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Village</th>
+            <th>Number of Trees</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="farmer in farmers">
+            <td>{{ farmer.first_name }}</td>
+            <td>{{ farmer.last_name }}</td>
+            <td>{{ farmer.village }}</td>
+            <td>{{ farmer.tree_count }}</td>
+            <td>
+                <button class="btn-danger" ng-click="delete_farmer($index)">Delete</button>
+                <button class="btn-primary" ng-click="edit_farmer($index)">Edit</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<form class="form-inline">
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" placeholder="First Name" ng-model="farmer_.first_name">
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" placeholder="Last Name" ng-model="farmer_.last_name">
+    </div>
+    <div class="form-group">
+        <label>Village</label>
+        <input type="text" class="form-control" placeholder="Village" ng-model="farmer_.village">
+    </div>
+    <div class="form-group">
+        <label>Number of Trees</label>
+        <input type="text" class="form-control" placeholder="Number of Trees" ng-model="farmer_.tree_count">
+    </div>
+    <button class="btn btn-primary" ng-click="add_farmer(farmer_)">Add Farmer</button>
+</form>
+

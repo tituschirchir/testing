@@ -1,0 +1,27 @@
+<div id="about" class="jumbotron  text-left">
+    <div class="row">
+        <div class="col-sm-6">
+            <canvas id="radar" class="chart chart-radar"
+                    chart-data="data" chart-options="options" chart-labels="labels">
+            </canvas>
+        </div>
+        <div class="col-sm-6">
+            <p>
+                Virtual Tree Owners aims to build a collaborative network between Kenyan farmers and global donors. Our
+                goal is to address deforestation and poverty through tree planting. Participating donors can contribute
+                money to sponsor the cost of raising a seedling, which will allow farmers in rural Kenya to obtain the
+                seedlings for free and raise them on their property.
+            </p>
+            <p>
+                Sh. 10 (US ${{ one_tree_cost }}) donation will fund one tree seedling whose value will
+                be 2000 times greater after 10 years. Not only does this enable people around the world to contribute to
+                reforestation despite lack of resources/land to raise trees themselves, but the livelihood of the Kenyan
+                farmers is also improved. Farmers can use and sell the products of the tree, improving their food
+                security and economic standing. We are currently serving <strong>{{ farmers.length }} </strong> farmers
+                who are tending to <strong>{{ getTotalTrees() }}</strong> trees.
+            </p>
+        </div>
+
+    </div>
+
+</div>
